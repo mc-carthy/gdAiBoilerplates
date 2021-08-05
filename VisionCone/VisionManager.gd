@@ -3,7 +3,10 @@ extends Spatial
 export var vision_cone_arc: float = 60.0
 
 var los: bool = false
-var check_this_frame: bool = false
+var check_this_frame: bool
+
+func _ready() -> void:
+	check_this_frame = randi() % 2 == 0
 
 func in_vision_cone(point: Vector3) -> bool:
 	var forward = -global_transform.basis.z
