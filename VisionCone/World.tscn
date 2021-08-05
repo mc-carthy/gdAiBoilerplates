@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Agent.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Target.gd" type="Script" id=2]
 
 [sub_resource type="CubeMesh" id=1]
 size = Vector3( 0.2, 0.2, 2 )
@@ -79,6 +80,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -14 )
 "targets",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0 )
+script = ExtResource( 2 )
 
 [node name="Red" type="MeshInstance" parent="Targetbase/Target"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0 )
@@ -95,7 +97,6 @@ current = true
 
 [node name="Wall" type="StaticBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -11 )
-visible = false
 
 [node name="MeshInstance" type="MeshInstance" parent="Wall"]
 mesh = SubResource( 8 )

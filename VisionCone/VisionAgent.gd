@@ -1,6 +1,7 @@
 extends Spatial
 
-export var vision_cone_arc: float = 60.0
+onready var VisionManager = $VisionManager
+
 var target: Spatial
 
 func _ready() -> void:
@@ -8,15 +9,12 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	var target_point = target.global_transform.origin
-	if in_vision_cone(target_point):
+	if target.has_method('get_aim_at_position'):
+		target_point = target.get_aim_at_position()
+
+	if VisionManager.in_vision_cone(target_point) and VisionManager.has_los(target_point):
 		$Graphics/Red.show()
 		$Graphics/Yellow.hide()
 	else:
 		$Graphics/Red.hide()
 		$Graphics/Yellow.show()
-
-func in_vision_cone(point: Vector3) -> bool:
-	var forward = -global_transform.basis.z
-	var pos = global_transform.origin
-	var dir_to_point = point - pos
-	return rad2deg(dir_to_point.angle_to(forward)) <= vision_cone_arc / 2.0
