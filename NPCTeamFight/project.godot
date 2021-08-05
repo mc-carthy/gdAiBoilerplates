@@ -1,0 +1,46 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "KinematicBody",
+"class": "FightAgent",
+"language": "GDScript",
+"path": "res://FightAgent.gd"
+} ]
+_global_script_class_icons={
+"FightAgent": ""
+}
+
+[application]
+
+config/name="NPCTeamFight"
+run/main_scene="res://TeamFight.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+AreaQueryManager="*res://AreaQueryManager.tscn"
+
+[display]
+
+window/vsync/use_vsync=false
+
+[layer_names]
+
+3d_physics/layer_1="environment"
+3d_physics/layer_2="characters"
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
