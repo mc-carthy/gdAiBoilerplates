@@ -2,22 +2,22 @@
 
 [ext_resource path="res://Agent.tscn" type="PackedScene" id=1]
 
-[sub_resource type="CubeMesh" id=5]
+[sub_resource type="CubeMesh" id=1]
 size = Vector3( 0.2, 0.2, 2 )
 
-[sub_resource type="SpatialMaterial" id=6]
+[sub_resource type="SpatialMaterial" id=2]
 albedo_color = Color( 1, 0, 0.956863, 1 )
 
-[sub_resource type="CubeMesh" id=1]
+[sub_resource type="CubeMesh" id=3]
 size = Vector3( 100, 2, 100 )
 
-[sub_resource type="SpatialMaterial" id=2]
+[sub_resource type="SpatialMaterial" id=4]
 albedo_color = Color( 0.470588, 1, 0.501961, 1 )
 
-[sub_resource type="CapsuleMesh" id=3]
+[sub_resource type="CapsuleMesh" id=5]
 radius = 0.5
 
-[sub_resource type="SpatialMaterial" id=4]
+[sub_resource type="SpatialMaterial" id=6]
 albedo_color = Color( 0, 0.345098, 1, 1 )
 
 [sub_resource type="Animation" id=7]
@@ -53,20 +53,20 @@ transform = Transform( 0.866025, 0, -2.55, 0, 1, 0, 0.5, 0, 4.41673, 0, 0, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Agent/Line"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.19608 )
-mesh = SubResource( 5 )
-material/0 = SubResource( 6 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
 
 [node name="Line2" type="Spatial" parent="Agent"]
 transform = Transform( 0.866025, 0, 2.55, 0, 1, 0, -0.5, 0, 4.41673, 0, 0, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Agent/Line2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.19608 )
-mesh = SubResource( 5 )
-material/0 = SubResource( 6 )
-
-[node name="Ground" type="MeshInstance" parent="."]
 mesh = SubResource( 1 )
 material/0 = SubResource( 2 )
+
+[node name="Ground" type="MeshInstance" parent="."]
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( -0.3092, -0.602318, 0.735941, 0, 0.773862, 0.633354, -0.950997, 0.195833, -0.239278, 0, 18.2218, 0 )
@@ -82,8 +82,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0 )
 
 [node name="Red" type="MeshInstance" parent="Targetbase/Target"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0 )
-mesh = SubResource( 3 )
-material/0 = SubResource( 4 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Targetbase"]
 autoplay = "move"
