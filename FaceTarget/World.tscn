@@ -51,7 +51,7 @@ transform = Transform( -0.3092, -0.602318, 0.735941, 0, 0.773862, 0.633354, -0.9
 shadow_enabled = true
 
 [node name="Targetbase" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -14 )
+transform = Transform( 0.961363, -0.275285, 0, 0.275285, 0.961363, 0, 0, 0, 1, 0, 6.34749, -14 )
 
 [node name="Target" type="Spatial" parent="Targetbase" groups=[
 "targets",
@@ -68,7 +68,7 @@ autoplay = "move"
 anims/move = SubResource( 5 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.5, 0.866026, 0, -0.866026, 0.5, 0, 18.0075, 1.93159 )
+transform = Transform( 1, 0, 0, 0, 0.914755, 0.404009, 0, -0.404009, 0.914755, 0, 9.17861, 14.3213 )
 current = true
 
 [node name="Wall" type="StaticBody" parent="."]

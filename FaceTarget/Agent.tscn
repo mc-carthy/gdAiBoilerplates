@@ -36,8 +36,12 @@ material/0 = SubResource( 5 )
 [node name="FaceTargetY" type="Spatial" parent="."]
 script = ExtResource( 2 )
 
-[node name="Pointer" type="MeshInstance" parent="FaceTargetY"]
-transform = Transform( 0.14178, 0, 0, 0, -6.01017e-08, -0.14178, 0, 1.03466, -4.66354e-09, 0, 1.44217, -1.09028 )
+[node name="FaceTargetX" type="Spatial" parent="FaceTargetY"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 1.442, 0 )
+script = ExtResource( 2 )
+
+[node name="Pointer" type="MeshInstance" parent="FaceTargetY/FaceTargetX"]
+transform = Transform( -6.1974e-09, -6.01017e-08, -0.14178, -0.14178, 2.62713e-15, 6.1974e-09, 0, 1.03466, -4.66354e-09, 0.000169992, -7.43228e-12, -1.09028 )
 material_override = SubResource( 1 )
 mesh = SubResource( 2 )
 material/0 = SubResource( 1 )
