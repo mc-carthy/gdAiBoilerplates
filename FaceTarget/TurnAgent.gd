@@ -1,13 +1,14 @@
 extends Spatial
 
-
+onready var face_target = $FaceTargetY
 
 var target : Spatial
 func _ready():
-	target = get_tree().get_nodes_in_group("targets")[0]
+	target = get_tree().get_nodes_in_group('targets')[0]
 
 func _process(delta):
-	pass
+	var target_pos = target.global_transform.origin
+	face_target.face_point(target_pos, delta)
 
 func show_red():
 	$Graphics/Red.show()
