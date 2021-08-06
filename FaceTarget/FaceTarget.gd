@@ -12,3 +12,8 @@ func face_point(point: Vector3, delta: float):
 	if angle < turn_amount:
 		turn_amount = angle
 	rotate_object_local(Vector3.UP, -turn_amount * turn_dir)
+
+func is_facing_target(target_point: Vector3) -> bool:
+	var x_threshold = 1.0
+	var local_target_point = to_local(target_point)
+	return local_target_point.z < 0 and abs(local_target_point.x) < x_threshold
