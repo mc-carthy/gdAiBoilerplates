@@ -77,7 +77,7 @@ transform = Transform( 7.54979e-08, 1, 0, -1, 7.54979e-08, 0, 0, 0, 1, 0, 0, 0.0
 shape = SubResource( 1 )
 
 [node name="Graphics" type="Spatial" parent="."]
-transform = Transform( 7.54979e-08, 1, 0, -1, 7.54979e-08, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="TrailParticles" type="Particles" parent="Graphics"]
 transform = Transform( 7.54979e-08, -1, 0, 1, 7.54979e-08, 0, 0, 0, 1, 0, 0, 2.90388 )
@@ -133,6 +133,9 @@ transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0
 script = ExtResource( 2 )
 
 [node name="DirectionRef" type="Spatial" parent="FaceTargetY/FaceTargetX"]
+
+[node name="RemoteTransform" type="RemoteTransform" parent="FaceTargetY/FaceTargetX"]
+remote_path = NodePath("../../../Graphics")
 
 [connection signal="timeout" from="DeleteTimer" to="." method="queue_free"]
 [connection signal="timeout" from="ExplodeTimer" to="." method="explode"]
