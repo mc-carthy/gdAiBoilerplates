@@ -16,4 +16,9 @@ func _physics_process(delta):
 	global_translate(move_vec * move_speed * delta)
 
 func update_move_vec():
-	pass
+	var path = nav.get_simple_path(global_transform.origin, target.global_transform.origin)
+	if path.size() > 1:
+		var dir: Vector3 = path[1] - global_transform.origin
+		dir.y = 0
+		dir = dir.normalized()
+		move_vec = dir
